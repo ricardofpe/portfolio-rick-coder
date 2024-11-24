@@ -13,3 +13,28 @@
     --foreground: #ededed;
   }
 }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: none;
+  height: 100vh;
+  background: linear-gradient(135deg, #000000, #1c1c1c, #3a3a3a);
+  animation: gradientAnimation 8s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
