@@ -19,9 +19,9 @@ export default function About() {
         build modern and responsive interfaces. For the back-end, I utilize
         Node.js and NestJS to construct robust and scalable APIs. My mobile
         development experience is primarily with React Native. MongoDB is my
-        preferred database solution for many projects. I hold a Bachelor's
-        degree in Systems Analysis and Development and have one year of
-        professional experience in the field.
+        preferred database solution for many projects. I hold a Graduation in
+        Systems Analysis and Development and have one year of professional
+        experience in the field.
       </p>
 
       <p className="text-gray-400">
