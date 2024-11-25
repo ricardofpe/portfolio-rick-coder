@@ -1,6 +1,7 @@
 
 import Head from 'next/head';
 import '../app/global.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 export default function MyApp({ Component, pageProps }) {
     return (
