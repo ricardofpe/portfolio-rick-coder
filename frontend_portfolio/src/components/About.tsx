@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <section className="flex flex-col mt-28 gap-6">
-      <h6 className="font-semibold">ABOUT ME</h6>
+      <h6 className="font-semibold text-sm">ABOUT</h6>
 
       <p className="text-gray-400">
         I'm a passionate full-stack developer dedicated to crafting accessible
