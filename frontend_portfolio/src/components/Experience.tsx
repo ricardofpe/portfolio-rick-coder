@@ -1,4 +1,29 @@
-export default function Experience() {
+import {
+  SiReact,
+  SiNodedotjs,
+  SiMongodb,
+  SiStyledcomponents,
+} from "react-icons/si";
+
+interface TechnologyIcon {
+  [key: string]: React.ReactElement;
+}
+
+const Experience: React.FC = () => {
+  const technologyIcons: TechnologyIcon = {
+    React: <SiReact className="mr-2" size={18} />,
+    NodeJS: <SiNodedotjs className="mr-2" size={18} />,
+    "Styled Components": <SiStyledcomponents className="mr-2" size={18} />,
+    MongoDB: <SiMongodb className="mr-2" size={18} />,
+  };
+
+  const technologies: string[] = [
+    "React",
+    "NodeJS",
+    "Styled Components",
+    "MongoDB",
+  ];
+
   return (
     <section className="flex flex-col mt-20 gap-3">
       <h6 className="font-semibold text-sm uppercase mb-6 text-gray-400">
@@ -22,14 +47,15 @@ export default function Experience() {
         {technologies.map((tech) => (
           <span
             key={tech}
-            className="bg-gradient-to-r from-gray-800 to-gray-600 text-gray-100 px-3 py-1 rounded-full inline-block"
+            className="flex items-center border border-gray-700 border-opacity-20 bg-gradient-to-r from-gray-800 to-gray-600 text-gray-100 px-3 py-1 rounded-full inline-block"
           >
-            {tech}
+            {technologyIcons[tech]}
+            <span>{tech}</span>
           </span>
         ))}
       </div>
     </section>
   );
-}
+};
 
-const technologies = ["React", "NodeJS", "Styled Components", "MongoDB"];
+export default Experience;
