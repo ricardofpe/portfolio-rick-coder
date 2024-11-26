@@ -22,7 +22,7 @@ export const Project: React.FC = () => {
         href="https://oficinadasfacas.com.br/index"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center font-medium text-gray-100 hover:text-gray-400 transition-colors duration-200"
+        className="flex items-center font-medium text-gray-100 hover:text-sky-300 transition-colors duration-200"
       >
         Oficina das Facas: A Modern E-commerce Platform{" "}
         <svg
