@@ -9,7 +9,7 @@ interface TechnologyIcon {
   [key: string]: React.ReactElement;
 }
 
-const Experience: React.FC = () => {
+export const Experience: React.FC = () => {
   const technologyIcons: TechnologyIcon = {
     React: <SiReact className="mr-2" size={18} />,
     NodeJS: <SiNodedotjs className="mr-2" size={18} />,
@@ -57,5 +57,3 @@ const Experience: React.FC = () => {
     </section>
   );
 };
-
-export default Experience;
