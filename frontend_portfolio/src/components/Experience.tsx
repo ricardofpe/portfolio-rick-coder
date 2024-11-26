@@ -43,7 +43,7 @@ const Experience: React.FC = () => {
         overall productivity through well-designed and robust systems.
       </p>
 
-      <div className="flex mt-4 flex-wrap gap-2 text-sm">
+      <div className="flex mt-1 flex-wrap gap-2 text-sm">
         {technologies.map((tech) => (
           <span
             key={tech}
