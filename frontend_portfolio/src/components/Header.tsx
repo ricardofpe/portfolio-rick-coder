@@ -11,7 +11,7 @@ export default function Header() {
           <h6 className="text-lg font-semibold">Software Engineer</h6>
         </div>
         <div>
-          <p className="text-gray-400">
+          <p className="text-gray-300">
             I build accessible, precise, and visually refined web experiences
             with care and detail.
           </p>
@@ -21,7 +21,7 @@ export default function Header() {
             href="https://linkedin.com/in/ricardofpe"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white"
+            className="text-gray-300 hover:text-white"
           >
             <FaLinkedin size={24} />
           </a>
@@ -29,7 +29,7 @@ export default function Header() {
             href="https://github.com/ricardofpe"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white"
+            className="text-gray-300 hover:text-white"
           >
             <FaGithub size={24} />
           </a>
