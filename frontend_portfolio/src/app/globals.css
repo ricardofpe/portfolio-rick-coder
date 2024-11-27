@@ -27,6 +27,7 @@ body {
   animation: gradientAnimation 8s ease infinite;
   font-family: "Poppins", sans-serif;
   color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 @keyframes gradientAnimation {
@@ -42,9 +43,9 @@ body {
 }
 
 .container-wide {
-  @apply px-6 py-6 mt-4;
+  @apply py-6 mt-4;
 }
 
 .container {
-  @apply mx-auto max-w-7xl;
+  @apply mx-auto;
 }

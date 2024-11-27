@@ -1,11 +1,11 @@
 export default function Footer() {
   return (
-    <footer className="mt-20 mb-10">
-      <p className="text-gray-400">
+    <footer className="mt-20 mb-10 px-4 flex justify-center lg:mt-24">
+      <p className="text-gray-400 text-sm md:text-base lg:text-lg leading-relaxed text-center md:text-left">
         Coded in{" "}
         <a
           href="https://code.visualstudio.com/"
-          className=" text-white hover:text-sky-300"
+          className="text-white hover:text-sky-300"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -14,7 +14,7 @@ export default function Footer() {
         by yours truly. Built with{" "}
         <a
           href="https://nextjs.org/"
-          className=" text-white hover:text-sky-300"
+          className="text-white hover:text-sky-300"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -23,7 +23,7 @@ export default function Footer() {
         and{" "}
         <a
           href="https://tailwindcss.com/"
-          className=" text-white hover:text-sky-300"
+          className="text-white hover:text-sky-300"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -32,7 +32,7 @@ export default function Footer() {
         , deployed with{" "}
         <a
           href="https://vercel.com/"
-          className=" text-white hover:text-sky-300"
+          className="text-white hover:text-sky-300"
           target="_blank"
           rel="noopener noreferrer"
         >

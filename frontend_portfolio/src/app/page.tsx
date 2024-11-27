@@ -7,11 +7,19 @@ import { Project } from "@/components/Project";
 export default function Home() {
   return (
     <div className="container container-wide">
-      <Header />
-      <About />
-      <Experience />
-      <Project />
-      <Footer />
+      <div className="lg:flex lg:mt-10">
+        <div className="lg:w-1/2 lg:pr-8">
+          {" "}
+          <Header />
+        </div>
+        <div className="lg:w-1/2">
+          {" "}
+          <About />
+          <Experience />
+          <Project />
+          <Footer />
+        </div>
+      </div>
     </div>
   );
 }
