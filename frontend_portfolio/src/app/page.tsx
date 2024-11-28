@@ -9,14 +9,18 @@ export default function Home() {
     <div className="container container-wide">
       <div className="lg:flex lg:mt-10">
         <div className="lg:w-1/2 lg:pr-8">
-          {" "}
           <Header />
         </div>
         <div className="lg:w-1/2">
-          {" "}
-          <About />
-          <Experience />
-          <Project />
+          <section id="about">
+            <About />
+          </section>
+          <section id="experience">
+            <Experience />
+          </section>
+          <section id="projects">
+            <Project />
+          </section>
           <Footer />
         </div>
       </div>
