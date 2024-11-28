@@ -1,8 +1,21 @@
+"use client";
 import Image from "next/image";
 import oficinaDasFacas from "../../public/oficina_facas_site.png";
 import { SiReact, SiDotnet, SiTailwindcss } from "react-icons/si";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
-export const Project: React.FC = () => {
+export const Project = () => {
+  const projectRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      projectRef.current,
+      { opacity: 0, scale: 0.8 },
+      { opacity: 1, scale: 1, duration: 1.2, ease: "power2.out", delay: 0.3 }
+    );
+  }, []);
+
   const technologies = [
     { icon: <SiReact className="mr-2" size={18} />, name: "React" },
     { icon: <SiDotnet className="mr-2" size={18} />, name: ".NET" },
@@ -13,7 +26,10 @@ export const Project: React.FC = () => {
   ];
 
   return (
-    <section className="flex flex-col mt-20 gap-6 px-4">
+    <section
+      ref={projectRef}
+      className="flex flex-col mt-20 gap-6 px-4 id='projects'"
+    >
       <h6 className="font-semibold text-sm uppercase mb-6 text-gray-400 md:text-base lg:text-lg">
         PROJECTS
       </h6>

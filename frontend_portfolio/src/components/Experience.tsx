@@ -1,31 +1,38 @@
+"use client";
+import { useEffect, useRef } from "react";
 import {
   SiReact,
   SiNodedotjs,
   SiMongodb,
   SiStyledcomponents,
 } from "react-icons/si";
+import gsap from "gsap";
 
-interface TechnologyIcon {
-  [key: string]: React.ReactElement;
-}
+export const Experience = () => {
+  const experienceRef = useRef(null);
 
-export const Experience: React.FC = () => {
-  const technologyIcons: TechnologyIcon = {
+  useEffect(() => {
+    gsap.fromTo(
+      experienceRef.current,
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: "power2.out", delay: 0.5 }
+    );
+  }, []);
+
+  const technologyIcons: { [key: string]: React.ReactElement } = {
     React: <SiReact className="mr-2" size={18} />,
     NodeJS: <SiNodedotjs className="mr-2" size={18} />,
     "Styled Components": <SiStyledcomponents className="mr-2" size={18} />,
     MongoDB: <SiMongodb className="mr-2" size={18} />,
   };
 
-  const technologies: string[] = [
-    "React",
-    "NodeJS",
-    "Styled Components",
-    "MongoDB",
-  ];
+  const technologies = ["React", "NodeJS", "Styled Components", "MongoDB"];
 
   return (
-    <section className="flex flex-col mt-20 gap-6 px-4">
+    <section
+      ref={experienceRef}
+      className="flex flex-col mt-20 gap-6 px-4 id='experience'"
+    >
       <h6 className="font-semibold text-sm uppercase mb-6 text-gray-400 md:text-base lg:text-lg">
         EXPERIENCE
       </h6>

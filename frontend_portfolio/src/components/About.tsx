@@ -1,6 +1,23 @@
+"use client";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+
 export default function About() {
+  const aboutRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      aboutRef.current,
+      { x: -50, opacity: 0 },
+      { x: 0, opacity: 1, duration: 1, ease: "power2.out", delay: 0.2 }
+    );
+  }, []);
+
   return (
-    <section className="flex flex-col mt-28 gap-6 px-4 lg:mt-0">
+    <section
+      ref={aboutRef}
+      className="flex flex-col mt-28 lg:mt-0 gap-6 px-4 id='about'"
+    >
       <h6 className="font-semibold text-sm md:text-base lg:text-lg">ABOUT</h6>
 
       <p className="text-gray-300 text-sm md:text-base lg:text-lg leading-relaxed">
