@@ -18,7 +18,9 @@ export default function About() {
       ref={aboutRef}
       className="flex flex-col mt-28 lg:mt-0 gap-6 px-4 id='about'"
     >
-      <h6 className="font-semibold text-sm md:text-base lg:text-lg">ABOUT</h6>
+      <h6 className="font-semibold text-sm uppercase mb-6 text-gray-400 md:text-base lg:text-lg">
+        ABOUT
+      </h6>
 
       <p className="text-gray-300 text-sm md:text-base lg:text-lg leading-relaxed">
         I'm a passionate full-stack developer dedicated to crafting accessible
