@@ -1,14 +1,26 @@
 "use client";
 import { useEffect, useRef } from "react";
+import gsap from "gsap";
 import {
   SiReact,
   SiNodedotjs,
   SiMongodb,
   SiStyledcomponents,
 } from "react-icons/si";
-import gsap from "gsap";
 
-export const Experience = () => {
+interface ExperienceProps {
+  title: string;
+  time: string;
+  text: string;
+  technologies?: string[];
+}
+
+export const Experience = ({
+  title,
+  time,
+  text,
+  technologies = [],
+}: ExperienceProps) => {
   const experienceRef = useRef(null);
 
   useEffect(() => {
@@ -26,43 +38,32 @@ export const Experience = () => {
     MongoDB: <SiMongodb className="mr-2" size={18} />,
   };
 
-  const technologies = ["React", "NodeJS", "Styled Components", "MongoDB"];
-
   return (
-    <section
-      ref={experienceRef}
-      className="flex flex-col mt-20 gap-6 px-4 id='experience'"
-    >
-      <h6 className="font-semibold text-sm uppercase mb-6 text-gray-400 md:text-base lg:text-lg">
-        EXPERIENCE
-      </h6>
-
+    <section ref={experienceRef} className="flex flex-col mt-20 gap-6 px-4">
       <span className="text-sm text-gray-500 md:text-base lg:text-lg">
-        2024 - PRESENT
+        {time}
       </span>
 
       <h6 className="font-medium text-gray-100 md:text-lg lg:text-xl">
-        Systems Analysis and Development - Notorium Certificadora Digital
+        {title}
       </h6>
 
       <p className="text-gray-300 text-sm md:text-base lg:text-lg leading-relaxed">
-        I develop systems to simplify user experience, integrating APIs and
-        automating manual processes. My work focuses on creating efficient and
-        user-friendly solutions. I strive to streamline workflows and improve
-        overall productivity through well-designed and robust systems.
+        {text}
       </p>
 
-      <div className="flex mt-1 flex-wrap gap-2 text-sm md:gap-3 lg:gap-4">
-        {technologies.map((tech) => (
-          <span
-            key={tech}
-            className="flex items-center border border-gray-700 border-opacity-20 bg-gradient-to-r from-gray-800 to-gray-600 text-gray-100 px-3 py-1 rounded-full inline-block md:px-4 md:py-1.5 lg:px-5 lg:py-2"
-          >
-            {technologyIcons[tech]}
-            <span>{tech}</span>
-          </span>
-        ))}
-      </div>
+      {technologies.length > 0 && (
+        <div className="flex mt-1 flex-wrap gap-2 text-sm md:gap-3 lg:gap-4">
+          {technologies.map((tech) => (
+            <span
+              key={tech}
+              className="flex items-center border border-gray-700 border-opacity-20 bg-gradient-to-r from-gray-800 to-gray-600 text-gray-100 px-3 py-1 rounded-full inline-block md:px-4 md:py-1.5 lg:px-5 lg:py-2"
+            >
+              {technologyIcons[tech] || tech} <span>{tech}</span>
+            </span>
+          ))}
+        </div>
+      )}
     </section>
   );
 };

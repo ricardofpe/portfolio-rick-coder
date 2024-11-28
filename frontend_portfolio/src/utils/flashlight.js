@@ -16,17 +16,10 @@ export function initFlashlight() {
       light.style.display = isLargeScreen ? 'block' : 'none';
     };
   
-    const handleScroll = () => {
-      if (isVisible) {
-        requestAnimationFrame(() => {
-          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          light.style.transform = `translateY(${scrollTop}px)`;
-        });
-      }
-    };
+ 
 
     document.addEventListener('mousemove', updateLightPosition);
     window.addEventListener('resize', handleResize);
-    window.addEventListener('scroll', handleScroll);
+
     handleResize();
   }
