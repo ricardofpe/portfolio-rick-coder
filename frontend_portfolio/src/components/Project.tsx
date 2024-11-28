@@ -10,6 +10,7 @@ interface ProjectProps {
   technologies: { icon: React.ReactElement; name: string }[];
   imageSrc: string | StaticImageData;
   altText: string;
+  showTitle?: boolean;
 }
 
 export const Project = ({
@@ -19,6 +20,7 @@ export const Project = ({
   technologies,
   imageSrc,
   altText,
+  showTitle = false,
 }: ProjectProps) => {
   const projectRef = useRef(null);
 
@@ -32,9 +34,11 @@ export const Project = ({
 
   return (
     <section ref={projectRef} className="flex flex-col mt-20 gap-6 px-4">
-      <h6 className="font-semibold text-sm uppercase mb-6 text-gray-400 md:text-base lg:text-lg">
-        PROJECTS
-      </h6>{" "}
+      {showTitle && (
+        <h6 className="font-semibold text-sm uppercase mb-6 text-gray-400 md:text-base lg:text-lg">
+          PROJECTS
+        </h6>
+      )}
       <a
         href={href}
         target="_blank"
