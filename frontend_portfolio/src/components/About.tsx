@@ -14,10 +14,7 @@ export default function About() {
   }, []);
 
   return (
-    <section
-      ref={aboutRef}
-      className="flex flex-col mt-28 lg:mt-0 gap-6 px-4 id='about'"
-    >
+    <section ref={aboutRef} className="flex flex-col mt-28 lg:mt-0 gap-6 px-4">
       <h6 className="font-semibold text-sm uppercase mb-6 text-gray-400 md:text-base lg:text-lg">
         ABOUT
       </h6>
