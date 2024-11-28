@@ -5,12 +5,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --scrollbar-track: linear-gradient(to bottom, #1c1c1c, #3a3a3a);
+  --scrollbar-thumb: linear-gradient(to bottom, #000000, #1c1c1c);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --scrollbar-track: linear-gradient(to bottom, #1c1c1c, #3a3a3a);
+    --scrollbar-thumb: linear-gradient(to bottom, #000000, #1c1c1c);
   }
 }
 
@@ -64,4 +68,19 @@ body {
 
 .container {
   @apply mx-auto;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
 }
