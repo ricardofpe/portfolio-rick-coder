@@ -34,7 +34,7 @@ export const Experience = ({
   const technologyIcons: { [key: string]: React.ReactElement } = {
     React: <SiReact className="mr-2" size={18} />,
     NodeJS: <SiNodedotjs className="mr-2" size={18} />,
-    "Styled Components": <SiStyledcomponents className="mr-2" size={18} />,
+    StyledComponents: <SiStyledcomponents className="mr-2" size={18} />,
     MongoDB: <SiMongodb className="mr-2" size={18} />,
   };
 

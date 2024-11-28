@@ -29,7 +29,7 @@ export default function Home() {
               title="Systems Analysis and Development - Notorium Certificadora Digital"
               time="2024 - PRESENT"
               text="I develop systems to simplify user experience, integrating APIs and automating manual processes. My work focuses on creating efficient and user-friendly solutions. I strive to streamline workflows and improve overall productivity through well-designed and robust systems."
-              technologies={["React", "NodeJS", "MongoDB"]}
+              technologies={["React", "NodeJS", "MongoDB", "StyledComponents"]}
             />
           </section>
           <section id="projects">
