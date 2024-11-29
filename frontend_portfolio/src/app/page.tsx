@@ -37,7 +37,7 @@ export default function Home() {
             <Project
               showTitle={true}
               title="Oficina das Facas"
-              href="https://oficinadasfacas.com.br/index"
+              href="https://oficinadasfacas.com.br"
               description="Developed a full-stack e-commerce application, 'Oficina das Facas,' utilizing React for the frontend and C# with .NET for the backend.  The platform features a sleek and modern design implemented with Tailwind CSS, providing a user-friendly experience for browsing and purchasing products."
               technologies={[
                 { icon: <SiReact className="mr-2" size={18} />, name: "React" },
