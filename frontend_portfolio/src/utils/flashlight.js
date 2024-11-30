@@ -3,18 +3,40 @@ export function initFlashlight() {
   light.className = 'light';
   document.body.appendChild(light);
 
-  const updateLightPosition = (e) => {
-    light.style.left = `${e.clientX - 50}px`;
-    light.style.top = `${e.clientY - 50}px`;
+  let mouseX = 0;
+  let mouseY = 0;
+  let isRunning = false;
+  let isLargeScreen = window.innerWidth >= 1024;
+
+  const updateLightPosition = () => {
+    if (isLargeScreen) {
+      light.style.left = `${mouseX - 50}px`;
+      light.style.top = `${mouseY - 50}px`;
+    }
+    isRunning = false;
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isLargeScreen) return;
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (!isRunning) {
+      isRunning = true;
+      requestAnimationFrame(updateLightPosition);
+    }
   };
 
   const handleResize = () => {
-    const isLargeScreen = window.innerWidth >= 1024;
+    isLargeScreen = window.innerWidth >= 1024;
     light.style.display = isLargeScreen ? 'block' : 'none';
+
+    if (isLargeScreen) {
+      document.addEventListener('mousemove', handleMouseMove);
+    } else {
+      document.removeEventListener('mousemove', handleMouseMove);
+    }
   };
 
-  document.addEventListener('mousemove', updateLightPosition);
   window.addEventListener('resize', handleResize);
-
   handleResize();
 }
