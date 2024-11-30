@@ -79,7 +79,7 @@ export default function Header() {
     >
       <div className="lg:w-full">
         <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl">
-          Rick Code
+          Rick Coder
         </h2>
         <h6 className="mt-2 text-lg font-semibold md:text-xl lg:text-2xl">
           Software Engineer
