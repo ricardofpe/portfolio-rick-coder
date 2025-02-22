@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import { Project } from "@/components/Project";
 import { useEffect } from "react";
 import { initFlashlight } from "../utils/flashlight";
-import { SiDotnet, SiNodedotjs, SiReact, SiTailwindcss } from "react-icons/si";
+import { SiNodedotjs, SiReact, SiTailwindcss } from "react-icons/si";
 import synapse from "../../public/synapsechat.png";
 
 export default function Home() {
