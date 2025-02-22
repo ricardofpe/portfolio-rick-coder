@@ -6,8 +6,8 @@ import Header from "@/components/Header";
 import { Project } from "@/components/Project";
 import { useEffect } from "react";
 import { initFlashlight } from "../utils/flashlight";
-import { SiDotnet, SiReact, SiTailwindcss } from "react-icons/si";
-import oficinaDasFacas from "../../public/oficina_facas_site.png";
+import { SiDotnet, SiNodedotjs, SiReact, SiTailwindcss } from "react-icons/si";
+import synapse from "../../public/synapsechat.png";
 
 export default function Home() {
   useEffect(() => {
@@ -36,19 +36,23 @@ export default function Home() {
           <section id="projects">
             <Project
               showTitle={true}
-              title="Oficina das Facas"
-              href="https://oficinadasfacas.com.br"
-              description="Developed a full-stack e-commerce application, 'Oficina das Facas,' utilizing React for the frontend and C# with .NET for the backend.  The platform features a sleek and modern design implemented with Tailwind CSS, providing a user-friendly experience for browsing and purchasing products."
+              title="Synapse"
+              href="https://github.com/ricardofpe/synapse"
+              description="A conversational AI app built with Express, React, Node.js and styled with Tailwindcss. Synapse lets you engage in natural language conversations with a powerful AI, powered by the Llama Model."
               technologies={[
                 { icon: <SiReact className="mr-2" size={18} />, name: "React" },
-                { icon: <SiDotnet className="mr-2" size={18} />, name: ".NET" },
+                {
+                  icon: <SiNodedotjs className="mr-2" size={18} />,
+                  name: "Node",
+                },
                 {
                   icon: <SiTailwindcss className="mr-2" size={18} />,
                   name: "Tailwind CSS",
                 },
               ]}
-              imageSrc={oficinaDasFacas}
-              altText="Oficina das Facas Screenshot"
+              imageSrc={synapse}
+              altText="Synapse"
+              isLink={true}
             />
           </section>
           <Footer />

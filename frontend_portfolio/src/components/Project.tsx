@@ -2,6 +2,7 @@
 import Image, { StaticImageData } from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import Link from "next/link";
 
 interface ProjectProps {
   title: string;
@@ -11,6 +12,7 @@ interface ProjectProps {
   imageSrc: string | StaticImageData;
   altText: string;
   showTitle?: boolean;
+  isLink?: boolean;
 }
 
 export const Project = ({
@@ -21,6 +23,7 @@ export const Project = ({
   imageSrc,
   altText,
   showTitle = false,
+  isLink = false,
 }: ProjectProps) => {
   const projectRef = useRef(null);
 
@@ -39,28 +42,36 @@ export const Project = ({
           PROJECTS
         </h6>
       )}
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center font-medium text-gray-100 hover:text-sky-300 transition-colors duration-200 md:text-lg lg:text-xl"
-      >
-        {title}{" "}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-4 w-4 ml-1"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+
+      {isLink ? (
+        <Link
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center font-medium text-gray-100 hover:text-sky-300 transition-colors duration-200 md:text-lg lg:text-xl"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M14 5l7 7m0 0l-7 7m7-7H3"
-          />
-        </svg>
-      </a>
+          {title}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4 ml-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            />
+          </svg>
+        </Link>
+      ) : (
+        <h3 className="font-medium text-gray-100 md:text-lg lg:text-xl">
+          {title}
+        </h3>
+      )}
+
       <p className="text-gray-300 text-sm md:text-base lg:text-lg leading-relaxed">
         {description}
       </p>
@@ -75,13 +86,14 @@ export const Project = ({
           </span>
         ))}
       </div>
-      <div className="w-full flex justify-center">
+      <div className="w-full flex">
         <Image
           src={imageSrc}
           alt={altText}
           width={400}
-          height={200}
-          className="shadow-md md:w-[600px] lg:w-[800px] md:h-auto"
+          height={undefined}
+          style={{ height: "auto" }}
+          className="shadow-md md:h-auto"
         />
       </div>
     </section>
