@@ -30,14 +30,15 @@ export default function About() {
 
       <p className="text-gray-300 text-sm md:text-base lg:text-lg leading-relaxed">
         My skillset spans front-end, back-end, and mobile development. On the
-        front-end, I&apos;m proficient in React, Next.js, TypeScript, and
+        front-end, I&apos;m proficient in React, Next.js, Vue.js, TypeScript, and
         JavaScript, leveraging styling frameworks like Tailwind CSS and Styled
         Components to build modern and responsive interfaces. For the back-end,
         I utilize Node.js and NestJS to construct robust and scalable APIs. My
         mobile development experience is primarily with React Native. MongoDB is
-        my preferred database solution for many projects. I hold a Graduation in
-        Systems Analysis and Development and have one year of professional
-        experience in the field.
+        my preferred database solution for many projects. In the DevOps space,
+        I have proficiency in Docker and Kubernetes for containerization and
+        orchestration. I hold a Graduation in Systems Analysis and
+        Development and have one year of professional experience in the field.
       </p>
 
       <p className="text-gray-300 text-sm md:text-base lg:text-lg leading-relaxed">
