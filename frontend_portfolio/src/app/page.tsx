@@ -27,7 +27,7 @@ export default function Home() {
           <section id="experience">
             <Experience
               showTitle={true}
-              title="Systems Analysis and Development - Notorium Certificadora Digital"
+              title="Full Stack Developer - Notorium Certificadora Digital"
               time="2024 - PRESENT"
               text="I develop systems to simplify user experience, integrating APIs and automating manual processes. My work focuses on creating efficient and user-friendly solutions. I strive to streamline workflows and improve overall productivity through well-designed and robust systems."
               technologies={["React", "NodeJS", "MongoDB", "StyledComponents"]}
