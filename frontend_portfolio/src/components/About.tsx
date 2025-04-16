@@ -30,7 +30,7 @@ export default function About() {
 
       <p className="text-gray-300 text-sm md:text-base lg:text-lg leading-relaxed">
         My skillset spans front-end, back-end, and mobile development. On the
-        front-end, I'm proficient in React, Next.js, Vue.js, TypeScript, and
+        front-end, I&apos;m proficient in React, Next.js, Vue.js, TypeScript, and
         JavaScript, leveraging styling frameworks like Tailwind CSS and Styled
         Components to build modern and responsive interfaces. For the back-end,
         I utilize Node.js and NestJS to construct robust and scalable APIs. My
