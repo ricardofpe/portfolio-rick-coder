@@ -9,7 +9,7 @@ interface ProjectProps {
   href: string;
   description: string;
   technologies: { icon: React.ReactElement; name: string }[];
-  imageSrc: string | StaticImageData;
+  imageSrc?: string | StaticImageData;
   altText: string;
   showTitle?: boolean;
   isLink?: boolean;
@@ -87,14 +87,17 @@ export const Project = ({
         ))}
       </div>
       <div className="w-full flex">
-        <Image
+        {imageSrc && (
+ <Image
           src={imageSrc}
           alt={altText}
           width={400}
           height={undefined}
-          style={{ height: "auto" }}
+          style={{ height: "500px" }}
           className="shadow-md md:h-auto"
         />
+        )}
+       
       </div>
     </section>
   );

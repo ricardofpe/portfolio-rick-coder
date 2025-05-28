@@ -6,8 +6,9 @@ import Header from "@/components/Header";
 import { Project } from "@/components/Project";
 import { useEffect } from "react";
 import { initFlashlight } from "../utils/flashlight";
-import { SiNodedotjs, SiReact, SiTailwindcss } from "react-icons/si";
+import { SiNodedotjs, SiReact, SiTailwindcss, SiVuedotjs } from "react-icons/si";
 import synapse from "../../public/synapsechat.png";
+import gamewild from "../../public/gamewild.png";
 
 export default function Home() {
   useEffect(() => {
@@ -50,8 +51,23 @@ export default function Home() {
                   name: "Tailwind CSS",
                 },
               ]}
-              imageSrc={synapse}
               altText="Synapse"
+              isLink={true}
+            />
+            <Project
+              showTitle={false}
+              title="Game Wild"
+              href="https://game-wild-dc.vercel.app/"
+              description="Developed with Vue.js, Tailwind CSS, and Node.js, this landing page serves as the first point of contact for users interested in joining the Game Wild Discord server."
+              technologies={[
+                { icon: <SiTailwindcss className="mr-2" size={18} />, name: "Tailwind CSS" },
+                { icon: <SiVuedotjs className="mr-2" size={18} />, name: "Vue" },
+                {
+                  icon: <SiNodedotjs className="mr-2" size={18} />,
+                  name: "Node",
+                },
+              ]}
+              altText="Game Wild"
               isLink={true}
             />
           </section>
@@ -60,4 +76,5 @@ export default function Home() {
       </div>
     </div>
   );
+
 }
