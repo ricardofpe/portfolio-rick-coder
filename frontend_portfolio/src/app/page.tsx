@@ -7,8 +7,6 @@ import { Project } from "@/components/Project";
 import { useEffect } from "react";
 import { initFlashlight } from "../utils/flashlight";
 import { SiNodedotjs, SiReact, SiTailwindcss, SiVuedotjs } from "react-icons/si";
-import synapse from "../../public/synapsechat.png";
-import gamewild from "../../public/gamewild.png";
 
 export default function Home() {
   useEffect(() => {
