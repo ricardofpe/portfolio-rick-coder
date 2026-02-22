@@ -26,10 +26,24 @@ export default function Home() {
           <section id="experience">
             <Experience
               showTitle={true}
-              title="Full Stack Developer - Notorium Certificadora Digital"
-              time="2024 - PRESENT"
-              text="I develop systems to simplify user experience, integrating APIs and automating manual processes. My work focuses on creating efficient and user-friendly solutions. I strive to streamline workflows and improve overall productivity through well-designed and robust systems."
-              technologies={["React", "NodeJS", "MongoDB", "StyledComponents"]}
+              title="Full Stack Developer - Crosoften"
+              time="January 2026 - PRESENT"
+              text="Full Stack Developer, performing regular adjustments, simple completions, or rollbacks on the front-end, back-end, and integrations. My work involves front-end, back-end development, and integrations."
+              technologies={["NodeJS", "Angular", "SCSS"]}
+            />
+            <Experience
+              showTitle={false}
+              title="Full Stack Developer - Zoppy"
+              time="July 2025 - October 2025"
+              text="Full Stack Developer, responsible for implementing new features, maintaining the internal system. Worked on continuous performance improvement and application evolution, ensuring greater efficiency and quality in deliveries."
+              technologies={["Angular", "NestJS", "MySQL", "Tailwind CSS"]}
+            />
+            <Experience
+              showTitle={false}
+              title="Full Stack Developer - Notorium Certificadora Digital e TI"
+              time="June 2024 - PRESENT"
+              text="Analysis and Systems Development. Seeking task automation and building integration systems with various APIs, managing databases, developing complete systems participating in the entire Frontend, Backend, and Deploy cycle."
+              technologies={["React", "NodeJS", "MongoDB", "Tailwind CSS", "StyledComponents"]}
             />
           </section>
           <section id="projects">

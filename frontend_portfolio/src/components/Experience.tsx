@@ -6,6 +6,11 @@ import {
   SiNodedotjs,
   SiMongodb,
   SiStyledcomponents,
+  SiAngular,
+  SiNestjs,
+  SiMysql,
+  SiTailwindcss,
+  SiSass,
 } from "react-icons/si";
 
 interface ExperienceProps {
@@ -38,6 +43,11 @@ export const Experience = ({
     NodeJS: <SiNodedotjs className="mr-2" size={18} />,
     StyledComponents: <SiStyledcomponents className="mr-2" size={18} />,
     MongoDB: <SiMongodb className="mr-2" size={18} />,
+    Angular: <SiAngular className="mr-2" size={18} />,
+    NestJS: <SiNestjs className="mr-2" size={18} />,
+    MySQL: <SiMysql className="mr-2" size={18} />,
+    "Tailwind CSS": <SiTailwindcss className="mr-2" size={18} />,
+    SCSS: <SiSass className="mr-2" size={18} />,
   };
 
   return (
