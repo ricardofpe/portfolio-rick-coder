@@ -33,13 +33,6 @@ export default function Home() {
             />
             <Experience
               showTitle={false}
-              title="Full Stack Developer - Zoppy"
-              time="July 2025 - October 2025"
-              text="Full Stack Developer, responsible for implementing new features, maintaining the internal system. Worked on continuous performance improvement and application evolution, ensuring greater efficiency and quality in deliveries."
-              technologies={["Angular", "NestJS", "MySQL", "Tailwind CSS"]}
-            />
-            <Experience
-              showTitle={false}
               title="Full Stack Developer - Notorium Certificadora Digital e TI"
               time="June 2024 - PRESENT"
               text="Analysis and Systems Development. Seeking task automation and building integration systems with various APIs, managing databases, developing complete systems participating in the entire Frontend, Backend, and Deploy cycle."
