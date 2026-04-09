@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import { Project } from "@/components/Project";
 import { useEffect } from "react";
 import { initFlashlight } from "../utils/flashlight";
-import { SiNodedotjs, SiReact, SiTailwindcss, SiVuedotjs } from "react-icons/si";
+import { SiNodedotjs, SiReact, SiTailwindcss, SiMongodb, SiNestjs, SiAngular, SiMysql } from "react-icons/si";
 
 export default function Home() {
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function Home() {
               title="Full Stack Developer - Crosoften"
               time="January 2026 - PRESENT"
               text="Full Stack Developer, performing regular adjustments, simple completions, or rollbacks on the front-end, back-end, and integrations. My work involves front-end, back-end development, and integrations."
-              technologies={["NodeJS", "Angular", "SCSS"]}
+              technologies={["NodeJS", "Angular", "NestJS", "Tailwind CSS"]}
             />
             <Experience
               showTitle={false}
@@ -42,9 +42,51 @@ export default function Home() {
           <section id="projects">
             <Project
               showTitle={true}
-              title="Synapse"
-              href="https://github.com/ricardofpe/synapse"
-              description="A conversational AI app built with Express, React, Node.js and styled with Tailwindcss. Synapse lets you engage in natural language conversations with a powerful AI, powered by the Llama Model."
+              title="Hopion"
+              href="https://hopion.com.br/"
+              description="Institutional website for a software company that develops on-demand solutions. Built with a focus on modern UX/UI, clear communication, and a clean digital presence."
+              technologies={[
+                { icon: <SiReact className="mr-2" size={18} />, name: "React" },
+                {
+                  icon: <SiTailwindcss className="mr-2" size={18} />,
+                  name: "Tailwind CSS",
+                },
+                {
+                  icon: <SiNodedotjs className="mr-2" size={18} />,
+                  name: "Node",
+                },
+              ]}
+              altText="Hopion"
+              isLink={true}
+            />
+            <Project
+              showTitle={false}
+              title="Meu Bolinho"
+              href="https://meubolinho.com.br/"
+              description="A platform that helps users find establishments for celebrations — restaurants, party suppliers, cultural events and more. Full stack development with frontend, backend, and integrations."
+              technologies={[
+                { icon: <SiAngular className="mr-2" size={18} />, name: "Angular" },
+                {
+                  icon: <SiNestjs className="mr-2" size={18} />,
+                  name: "NestJS",
+                },
+                {
+                  icon: <SiMysql className="mr-2" size={18} />,
+                  name: "MySQL",
+                },
+                {
+                  icon: <SiTailwindcss className="mr-2" size={18} />,
+                  name: "Tailwind CSS",
+                },
+              ]}
+              altText="Meu Bolinho"
+              isLink={true}
+            />
+            <Project
+              showTitle={false}
+              title="Sounotorium"
+              href="https://sounotorium.com.br/"
+              description="A referral management system built for a digital certification company. Handles the full referral lifecycle with integrations and automation across frontend, backend, and deploy."
               technologies={[
                 { icon: <SiReact className="mr-2" size={18} />, name: "React" },
                 {
@@ -52,29 +94,18 @@ export default function Home() {
                   name: "Node",
                 },
                 {
+                  icon: <SiMongodb className="mr-2" size={18} />,
+                  name: "MongoDB",
+                },
+                {
                   icon: <SiTailwindcss className="mr-2" size={18} />,
                   name: "Tailwind CSS",
                 },
               ]}
-              altText="Synapse"
+              altText="Sounotorium"
               isLink={true}
             />
-            <Project
-              showTitle={false}
-              title="Game Wild"
-              href="https://game-wild-dc.vercel.app/"
-              description="Developed with Vue.js, Tailwind CSS, and Node.js, this landing page serves as the first point of contact for users interested in joining the Game Wild Discord server."
-              technologies={[
-                { icon: <SiTailwindcss className="mr-2" size={18} />, name: "Tailwind CSS" },
-                { icon: <SiVuedotjs className="mr-2" size={18} />, name: "Vue" },
-                {
-                  icon: <SiNodedotjs className="mr-2" size={18} />,
-                  name: "Node",
-                },
-              ]}
-              altText="Game Wild"
-              isLink={true}
-            />
+
           </section>
           <Footer />
         </div>
