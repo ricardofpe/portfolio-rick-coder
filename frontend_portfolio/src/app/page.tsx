@@ -7,11 +7,47 @@ import { Project } from "@/components/Project";
 import { useEffect } from "react";
 import { initFlashlight } from "../utils/flashlight";
 import { SiNodedotjs, SiReact, SiTailwindcss, SiMongodb, SiNestjs, SiAngular, SiMysql } from "react-icons/si";
+import { useApp } from "@/context/AppContext";
+import { t } from "@/translations";
 
 export default function Home() {
+  const { lang } = useApp();
+  const tr = t[lang];
+
   useEffect(() => {
     initFlashlight();
   }, []);
+
+  const projectHrefs = [
+    "https://hopion.com.br/",
+    "https://meubolinho.com.br/",
+    "https://sounotorium.com.br/",
+    "https://pedroviana.vercel.app/",
+  ];
+
+  const projectTechs = [
+    [
+      { icon: <SiReact className="mr-2" size={18} />, name: "React" },
+      { icon: <SiTailwindcss className="mr-2" size={18} />, name: "Tailwind CSS" },
+      { icon: <SiNodedotjs className="mr-2" size={18} />, name: "Node" },
+    ],
+    [
+      { icon: <SiAngular className="mr-2" size={18} />, name: "Angular" },
+      { icon: <SiNestjs className="mr-2" size={18} />, name: "NestJS" },
+      { icon: <SiMysql className="mr-2" size={18} />, name: "MySQL" },
+      { icon: <SiTailwindcss className="mr-2" size={18} />, name: "Tailwind CSS" },
+    ],
+    [
+      { icon: <SiReact className="mr-2" size={18} />, name: "React" },
+      { icon: <SiNodedotjs className="mr-2" size={18} />, name: "Node" },
+      { icon: <SiMongodb className="mr-2" size={18} />, name: "MongoDB" },
+      { icon: <SiTailwindcss className="mr-2" size={18} />, name: "Tailwind CSS" },
+    ],
+    [
+      { icon: <SiReact className="mr-2" size={18} />, name: "React" },
+      { icon: <SiTailwindcss className="mr-2" size={18} />, name: "Tailwind CSS" },
+    ],
+  ];
 
   return (
     <div className="container container-wide">
@@ -24,108 +60,40 @@ export default function Home() {
             <About />
           </section>
           <section id="experience">
-            <Experience
-              showTitle={true}
-              title="Full Stack Developer - Crosoften"
-              time="January 2026 - PRESENT"
-              text="Full Stack Developer, performing regular adjustments, simple completions, or rollbacks on the front-end, back-end, and integrations. My work involves front-end, back-end development, and integrations."
-              technologies={["NodeJS", "Angular", "NestJS", "Tailwind CSS"]}
-            />
-            <Experience
-              showTitle={false}
-              title="Full Stack Developer - Notorium Certificadora Digital e TI"
-              time="June 2024 - PRESENT"
-              text="Analysis and Systems Development. Seeking task automation and building integration systems with various APIs, managing databases, developing complete systems participating in the entire Frontend, Backend, and Deploy cycle."
-              technologies={["React", "NodeJS", "MongoDB", "Tailwind CSS", "StyledComponents"]}
-            />
+            {tr.experience.jobs.map((job, i) => (
+              <Experience
+                key={i}
+                showTitle={i === 0}
+                title={job.title}
+                time={job.time}
+                text={job.text}
+                technologies={
+                  i === 0
+                    ? ["NodeJS", "Angular", "NestJS", "Tailwind CSS"]
+                    : ["React", "NodeJS", "MongoDB", "Tailwind CSS", "StyledComponents"]
+                }
+                experienceTitle={tr.experience.title}
+              />
+            ))}
           </section>
           <section id="projects">
-            <Project
-              showTitle={true}
-              title="Hopion"
-              href="https://hopion.com.br/"
-              description="Institutional website for a software company that develops on-demand solutions. Built with a focus on modern UX/UI, clear communication, and a clean digital presence."
-              technologies={[
-                { icon: <SiReact className="mr-2" size={18} />, name: "React" },
-                {
-                  icon: <SiTailwindcss className="mr-2" size={18} />,
-                  name: "Tailwind CSS",
-                },
-                {
-                  icon: <SiNodedotjs className="mr-2" size={18} />,
-                  name: "Node",
-                },
-              ]}
-              altText="Hopion"
-              isLink={true}
-            />
-            <Project
-              showTitle={false}
-              title="Meu Bolinho"
-              href="https://meubolinho.com.br/"
-              description="A platform that helps users find establishments for celebrations — restaurants, party suppliers, cultural events and more. Full stack development with frontend, backend, and integrations."
-              technologies={[
-                { icon: <SiAngular className="mr-2" size={18} />, name: "Angular" },
-                {
-                  icon: <SiNestjs className="mr-2" size={18} />,
-                  name: "NestJS",
-                },
-                {
-                  icon: <SiMysql className="mr-2" size={18} />,
-                  name: "MySQL",
-                },
-                {
-                  icon: <SiTailwindcss className="mr-2" size={18} />,
-                  name: "Tailwind CSS",
-                },
-              ]}
-              altText="Meu Bolinho"
-              isLink={true}
-            />
-            <Project
-              showTitle={false}
-              title="Sounotorium"
-              href="https://sounotorium.com.br/"
-              description="A referral management system built for a digital certification company. Handles the full referral lifecycle with integrations and automation across frontend, backend, and deploy."
-              technologies={[
-                { icon: <SiReact className="mr-2" size={18} />, name: "React" },
-                {
-                  icon: <SiNodedotjs className="mr-2" size={18} />,
-                  name: "Node",
-                },
-                {
-                  icon: <SiMongodb className="mr-2" size={18} />,
-                  name: "MongoDB",
-                },
-                {
-                  icon: <SiTailwindcss className="mr-2" size={18} />,
-                  name: "Tailwind CSS",
-                },
-              ]}
-              altText="Sounotorium"
-              isLink={true}
-            />
-            <Project
-              showTitle={false}
-              title="Pedro Viana — Portfolio"
-              href="https://pedroviana.vercel.app/"
-              description="Personal portfolio website built to showcase projects and experience with a clean, modern design."
-              technologies={[
-                { icon: <SiReact className="mr-2" size={18} />, name: "React" },
-                {
-                  icon: <SiTailwindcss className="mr-2" size={18} />,
-                  name: "Tailwind CSS",
-                },
-              ]}
-              altText="Pedro Viana Portfolio"
-              isLink={true}
-            />
-
+            {tr.projects.items.map((project, i) => (
+              <Project
+                key={i}
+                showTitle={i === 0}
+                title={project.title}
+                href={projectHrefs[i]}
+                description={project.description}
+                technologies={projectTechs[i]}
+                altText={project.title}
+                isLink={true}
+                projectsTitle={tr.projects.title}
+              />
+            ))}
           </section>
           <Footer />
         </div>
       </div>
     </div>
   );
-
 }

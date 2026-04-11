@@ -19,6 +19,7 @@ interface ExperienceProps {
   text: string;
   technologies?: string[];
   showTitle?: boolean;
+  experienceTitle?: string;
 }
 
 export const Experience = ({
@@ -27,6 +28,7 @@ export const Experience = ({
   text,
   technologies = [],
   showTitle = false,
+  experienceTitle = "EXPERIENCE",
 }: ExperienceProps) => {
   const experienceRef = useRef(null);
 
@@ -54,7 +56,7 @@ export const Experience = ({
     <section ref={experienceRef} className="flex flex-col mt-20 gap-6 px-4">
       {showTitle && (
         <h6 className="font-semibold text-sm uppercase mb-6 text-gray-400 md:text-base lg:text-lg">
-          EXPERIENCE
+          {experienceTitle}
         </h6>
       )}
       <span className="text-sm text-gray-500 md:text-base lg:text-lg">

@@ -1,10 +1,15 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { MdLightMode, MdDarkMode } from "react-icons/md";
 import gsap from "gsap";
+import { useApp } from "@/context/AppContext";
+import { t } from "@/translations";
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState<string>("about");
+  const { lang, theme, toggleLang, toggleTheme } = useApp();
+  const tr = t[lang];
 
   const headerRef = useRef<HTMLDivElement>(null);
   const linksRef = useRef<HTMLAnchorElement[]>([]);
@@ -16,30 +21,15 @@ export default function Header() {
       { y: -50, opacity: 0 },
       { y: 0, opacity: 1, duration: 1.5, ease: "power3.out" }
     );
-
     gsap.fromTo(
       linksRef.current,
       { x: -50, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1.2,
-        stagger: 0.2,
-        ease: "power3.out",
-      }
+      { x: 0, opacity: 1, duration: 1.2, stagger: 0.2, ease: "power3.out" }
     );
-
     gsap.fromTo(
       socialIconsRef.current,
       { scale: 0, opacity: 0 },
-      {
-        scale: 1,
-        opacity: 1,
-        duration: 1,
-        stagger: 0.2,
-        ease: "back.out(1.7)",
-        delay: 0.5,
-      }
+      { scale: 1, opacity: 1, duration: 1, stagger: 0.2, ease: "back.out(1.7)", delay: 0.5 }
     );
   }, []);
 
@@ -53,11 +43,9 @@ export default function Header() {
         const sectionElement = document.getElementById(sectionId);
         if (sectionElement) {
           const rect = sectionElement.getBoundingClientRect();
-          const sectionHeight = rect.height;
           const visibleHeight =
             Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
-          const visibilityRatio = Math.max(0, visibleHeight / sectionHeight);
-
+          const visibilityRatio = Math.max(0, visibleHeight / rect.height);
           if (visibilityRatio > highestVisibilityRatio) {
             highestVisibilityRatio = visibilityRatio;
             mostVisibleSection = sectionId;
@@ -72,6 +60,8 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [activeSection]);
 
+  const isLight = theme === "light";
+
   return (
     <header
       ref={headerRef}
@@ -81,26 +71,25 @@ export default function Header() {
         <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl">
           Rick Coder
         </h2>
-        <h6 className="mt-2 text-lg font-semibold md:text-xl lg:text-2xl">
-          Software Engineer
+        <h6 className={`mt-2 text-lg font-semibold md:text-xl lg:text-2xl ${isLight ? "text-gray-700" : ""}`}>
+          {tr.header.role}
         </h6>
-        <p className="mt-2 max-w-96 text-gray-300 md:text-lg lg:text-xl">
-          I build accessible, precise, and visually refined web experiences with
-          care and detail.
+        <p className={`mt-2 max-w-96 text-sm md:text-lg lg:text-xl ${isLight ? "text-gray-600" : "text-gray-300"}`}>
+          {tr.header.bio}
         </p>
       </div>
 
       <div className="hidden lg:flex flex-col gap-5 w-[100%] mt-4">
-        {["about", "experience", "projects"].map((section, index) => (
+        {tr.nav.map((section, index) => (
           <a
             key={section}
-            href={`#${section}`}
-            className={`text-gray-300 hover:text-white transition-colors ${
-              activeSection === section ? "font-bold text-xl" : ""
+            href={`#${["about", "experience", "projects"][index]}`}
+            className={`transition-colors hover:text-white ${
+              activeSection === ["about", "experience", "projects"][index]
+                ? "font-bold text-xl"
+                : isLight ? "text-gray-500" : "text-gray-300"
             }`}
-            ref={(el) => {
-              linksRef.current[index] = el!;
-            }}
+            ref={(el) => { linksRef.current[index] = el!; }}
           >
             {section.charAt(0).toUpperCase() + section.slice(1)}
           </a>
@@ -112,10 +101,8 @@ export default function Header() {
           href="https://linkedin.com/in/ricardofpe"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-300 hover:text-white transition-colors"
-          ref={(el) => {
-            socialIconsRef.current[0] = el!;
-          }}
+          className={`transition-colors hover:text-white ${isLight ? "text-gray-500" : "text-gray-300"}`}
+          ref={(el) => { socialIconsRef.current[0] = el!; }}
         >
           <FaLinkedin size={24} className="lg:w-8 lg:h-8" />
         </a>
@@ -123,13 +110,33 @@ export default function Header() {
           href="https://github.com/ricardofpe"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-300 hover:text-white transition-colors"
-          ref={(el) => {
-            socialIconsRef.current[1] = el!;
-          }}
+          className={`transition-colors hover:text-white ${isLight ? "text-gray-500" : "text-gray-300"}`}
+          ref={(el) => { socialIconsRef.current[1] = el!; }}
         >
           <FaGithub size={24} className="lg:w-8 lg:h-8" />
         </a>
+
+        {/* Theme toggle */}
+        <button
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+          className={`transition-colors hover:text-white ${isLight ? "text-gray-500" : "text-gray-300"}`}
+        >
+          {isLight ? (
+            <MdDarkMode size={24} className="lg:w-8 lg:h-8" />
+          ) : (
+            <MdLightMode size={24} className="lg:w-8 lg:h-8" />
+          )}
+        </button>
+
+        {/* Language toggle */}
+        <button
+          onClick={toggleLang}
+          aria-label="Toggle language"
+          className={`text-sm font-semibold transition-colors hover:text-white ${isLight ? "text-gray-500" : "text-gray-300"}`}
+        >
+          {lang === "en" ? "PT" : "EN"}
+        </button>
       </div>
     </header>
   );

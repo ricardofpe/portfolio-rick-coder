@@ -13,6 +13,7 @@ interface ProjectProps {
   altText: string;
   showTitle?: boolean;
   isLink?: boolean;
+  projectsTitle?: string;
 }
 
 export const Project = ({
@@ -24,6 +25,7 @@ export const Project = ({
   altText,
   showTitle = false,
   isLink = false,
+  projectsTitle = "PROJECTS",
 }: ProjectProps) => {
   const projectRef = useRef(null);
 
@@ -39,7 +41,7 @@ export const Project = ({
     <section ref={projectRef} className="flex flex-col mt-20 gap-6 px-4">
       {showTitle && (
         <h6 className="font-semibold text-sm uppercase mb-6 text-gray-400 md:text-base lg:text-lg">
-          PROJECTS
+          {projectsTitle}
         </h6>
       )}
 

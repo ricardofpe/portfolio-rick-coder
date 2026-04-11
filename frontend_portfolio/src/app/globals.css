@@ -84,3 +84,54 @@ body::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb);
   border-radius: 10px;
 }
+
+/* Light mode */
+html.light-mode body {
+  background: linear-gradient(135deg, #c9c9c9, #d8d8d8, #e8e8e8);
+  color: #111;
+}
+
+html.light-mode body .text-gray-100,
+html.light-mode body .text-gray-200,
+html.light-mode body .text-gray-300 {
+  color: #1a1a1a;
+}
+
+html.light-mode body .text-gray-400,
+html.light-mode body .text-gray-500 {
+  color: #444;
+}
+
+html.light-mode body .from-gray-800,
+html.light-mode body .to-gray-600 {
+  --tw-gradient-from: #d1d5db;
+  --tw-gradient-to: #e5e7eb;
+}
+
+html.light-mode body span.from-gray-800 {
+  background-image: none;
+  background-color: #e2e8f0;
+  color: #1a1a1a;
+  border-color: #94a3b8;
+}
+
+html.light-mode body .text-white {
+  color: #1d4ed8 !important;
+}
+
+html.light-mode body .hover\:text-white:hover {
+  color: #0ea5e9 !important;
+}
+
+html.light-mode body .text-gray-100 {
+  color: #111;
+}
+
+html.light-mode .light {
+  background-color: rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 0 20px rgba(0, 0, 0, 0.15) inset,
+    0 0 50px rgba(0, 0, 0, 0.12),
+    0 0 100px rgba(0, 0, 0, 0.07),
+    0 0 150px rgba(0, 0, 0, 0.04);
+}
