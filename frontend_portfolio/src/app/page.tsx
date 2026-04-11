@@ -105,6 +105,21 @@ export default function Home() {
               altText="Sounotorium"
               isLink={true}
             />
+            <Project
+              showTitle={false}
+              title="Pedro Viana — Portfolio"
+              href="https://pedroviana.vercel.app/"
+              description="Personal portfolio website built to showcase projects and experience with a clean, modern design."
+              technologies={[
+                { icon: <SiReact className="mr-2" size={18} />, name: "React" },
+                {
+                  icon: <SiTailwindcss className="mr-2" size={18} />,
+                  name: "Tailwind CSS",
+                },
+              ]}
+              altText="Pedro Viana Portfolio"
+              isLink={true}
+            />
 
           </section>
           <Footer />
