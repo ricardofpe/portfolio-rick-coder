@@ -80,20 +80,27 @@ export default function Header() {
       </div>
 
       <div className="hidden lg:flex flex-col gap-5 w-[100%] mt-4">
-        {tr.nav.map((section, index) => (
-          <a
-            key={section}
-            href={`#${["about", "experience", "projects"][index]}`}
-            className={`transition-colors hover:text-white ${
-              activeSection === ["about", "experience", "projects"][index]
-                ? "font-bold text-xl"
-                : isLight ? "text-gray-500" : "text-gray-300"
-            }`}
-            ref={(el) => { linksRef.current[index] = el!; }}
-          >
-            {section.charAt(0).toUpperCase() + section.slice(1)}
-          </a>
-        ))}
+        {tr.nav.map((section, index) => {
+          const sectionId = ["about", "experience", "projects"][index];
+          return (
+            <a
+              key={section}
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className={`transition-colors hover:text-white ${
+                activeSection === sectionId
+                  ? "font-bold text-xl"
+                  : isLight ? "text-gray-500" : "text-gray-300"
+              }`}
+              ref={(el) => { linksRef.current[index] = el!; }}
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </a>
+          );
+        })}
       </div>
 
       <div className="mt-4 lg:mt-0 gap-3 flex lg:flex-row w-[100%] lg:items-center lg:gap-6">
