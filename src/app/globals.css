@@ -85,7 +85,6 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 
-/* Light mode */
 html.light-mode body {
   background: linear-gradient(135deg, #c9c9c9, #d8d8d8, #e8e8e8);
   color: #111;

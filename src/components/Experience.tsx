@@ -11,6 +11,7 @@ import {
   SiMysql,
   SiTailwindcss,
   SiSass,
+  SiPostgresql,
 } from "react-icons/si";
 
 interface ExperienceProps {
@@ -50,6 +51,7 @@ export const Experience = ({
     MySQL: <SiMysql className="mr-2" size={18} />,
     "Tailwind CSS": <SiTailwindcss className="mr-2" size={18} />,
     SCSS: <SiSass className="mr-2" size={18} />,
+    PostgreeSql: <SiPostgresql className="mr-2" size={18} />,
   };
 
   return (

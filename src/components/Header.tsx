@@ -123,7 +123,6 @@ export default function Header() {
           <FaGithub size={24} className="lg:w-8 lg:h-8" />
         </a>
 
-        {/* Theme toggle */}
         <button
           onClick={toggleTheme}
           aria-label="Toggle theme"
@@ -136,7 +135,6 @@ export default function Header() {
           )}
         </button>
 
-        {/* Language toggle */}
         <button
           onClick={toggleLang}
           aria-label="Toggle language"

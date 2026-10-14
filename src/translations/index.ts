@@ -11,14 +11,9 @@ export const t = {
       title: "EXPERIENCE",
       jobs: [
         {
-          title: "Full Stack Developer - Crosoften",
-          time: "January 2026 - PRESENT",
-          text: "Full Stack Developer, performing regular adjustments, simple completions, or rollbacks on the front-end, back-end, and integrations. My work involves front-end, back-end development, and integrations.",
-        },
-        {
           title: "Full Stack Developer - Notorium Certificadora Digital e TI",
           time: "June 2024 - PRESENT",
-          text: "Analysis and Systems Development. Seeking task automation and building integration systems with various APIs, managing databases, developing complete systems participating in the entire Frontend, Backend, and Deploy cycle.",
+          text: "Development and evolution of web applications, RESTful APIs, microservices, and third-party integrations. Experience with React, TypeScript, Vite, Node.js, Express, NestJS, PostgreSQL, MongoDB, and Prisma ORM. Responsible for developing interfaces, implementing authentication and authorization, data modeling, incremental synchronization, process automation, and external API integrations. Experience with distributed systems, software architecture, refactoring, and optimization, focusing on maintainability, performance, and scalability.",
         },
       ],
     },
@@ -27,19 +22,18 @@ export const t = {
       items: [
         {
           title: "Hopion",
-          description: "Institutional website for a software company that develops on-demand solutions. Built with a focus on modern UX/UI, clear communication, and a clean digital presence.",
-        },
-        {
-          title: "Meu Bolinho",
-          description: "A platform that helps users find establishments for celebrations — restaurants, party suppliers, cultural events and more. Full stack development with frontend, backend, and integrations.",
+          description:
+            "Institutional website for a software company that develops on-demand solutions. Built with a focus on modern UX/UI, clear communication, and a clean digital presence.",
         },
         {
           title: "Sounotorium",
-          description: "A referral management system built for a digital certification company. Handles the full referral lifecycle with integrations and automation across frontend, backend, and deploy.",
+          description:
+            "A referral management system built for a digital certification company. Handles the full referral lifecycle with integrations and automation across frontend, backend, and deploy.",
         },
         {
           title: "Pedro Viana — Portfolio",
-          description: "Personal portfolio website built to showcase projects and experience with a clean, modern design.",
+          description:
+            "Personal portfolio website built to showcase projects and experience with a clean, modern design.",
         },
       ],
     },
@@ -67,14 +61,10 @@ export const t = {
       title: "EXPERIÊNCIA",
       jobs: [
         {
-          title: "Desenvolvedor Full Stack - Crosoften",
-          time: "Janeiro 2026 - PRESENTE",
-          text: "Desenvolvedor Full Stack, realizando ajustes regulares, complementações simples ou rollbacks no front-end, back-end e integrações. Meu trabalho envolve desenvolvimento front-end, back-end e integrações.",
-        },
-        {
-          title: "Desenvolvedor Full Stack - Notorium Certificadora Digital e TI",
+          title:
+            "Desenvolvedor Full Stack - Notorium Certificadora Digital e TI",
           time: "Junho 2024 - PRESENTE",
-          text: "Análise e Desenvolvimento de Sistemas. Buscando automação de tarefas e construção de sistemas de integração com diversas APIs, gerenciamento de bancos de dados, desenvolvimento de sistemas completos participando de todo o ciclo de Frontend, Backend e Deploy.",
+          text: "Desenvolvimento e evolução de aplicações web, APIs RESTful, microsserviços e integrações com serviços de terceiros. Experiência com React, TypeScript, Vite, Node.js, Express, NestJS, PostgreSQL, MongoDB e Prisma ORM. Atuação no desenvolvimento de interfaces, autenticação e autorização, modelagem de dados, sincronização incremental, automação de processos e integrações com APIs externas. Experiência com sistemas distribuídos, arquitetura de software, refatoração e otimização, visando manutenibilidade, performance e escalabilidade.",
         },
       ],
     },
@@ -83,19 +73,18 @@ export const t = {
       items: [
         {
           title: "Hopion",
-          description: "Site institucional de uma empresa de software que desenvolve soluções sob demanda. Construído com foco em UX/UI moderno, comunicação clara e presença digital limpa.",
-        },
-        {
-          title: "Meu Bolinho",
-          description: "Plataforma que ajuda usuários a encontrar estabelecimentos para celebrações — restaurantes, fornecedores de festas, eventos culturais e mais. Desenvolvimento full stack com frontend, backend e integrações.",
+          description:
+            "Site institucional de uma empresa de software que desenvolve soluções sob demanda. Construído com foco em UX/UI moderno, comunicação clara e presença digital limpa.",
         },
         {
           title: "Sounotorium",
-          description: "Sistema de gestão de indicações construído para uma empresa de certificação digital. Gerencia todo o ciclo de indicações com integrações e automação no frontend, backend e deploy.",
+          description:
+            "Sistema de gestão de indicações construído para uma empresa de certificação digital. Gerencia todo o ciclo de indicações com integrações e automação no frontend, backend e deploy.",
         },
         {
           title: "Pedro Viana — Portfólio",
-          description: "Site de portfólio pessoal construído para apresentar projetos e experiências com um design limpo e moderno.",
+          description:
+            "Site de portfólio pessoal construído para apresentar projetos e experiências com um design limpo e moderno.",
         },
       ],
     },

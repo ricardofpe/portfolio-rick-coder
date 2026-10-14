@@ -20,7 +20,6 @@ export default function Home() {
 
   const projectHrefs = [
     "https://hopion.com.br/",
-    "https://meubolinho.com.br/",
     "https://sounotorium.com.br/",
     "https://pedroviana.vercel.app/",
   ];
@@ -30,12 +29,6 @@ export default function Home() {
       { icon: <SiReact className="mr-2" size={18} />, name: "React" },
       { icon: <SiTailwindcss className="mr-2" size={18} />, name: "Tailwind CSS" },
       { icon: <SiNodedotjs className="mr-2" size={18} />, name: "Node" },
-    ],
-    [
-      { icon: <SiAngular className="mr-2" size={18} />, name: "Angular" },
-      { icon: <SiNestjs className="mr-2" size={18} />, name: "NestJS" },
-      { icon: <SiMysql className="mr-2" size={18} />, name: "MySQL" },
-      { icon: <SiTailwindcss className="mr-2" size={18} />, name: "Tailwind CSS" },
     ],
     [
       { icon: <SiReact className="mr-2" size={18} />, name: "React" },
@@ -67,11 +60,7 @@ export default function Home() {
                 title={job.title}
                 time={job.time}
                 text={job.text}
-                technologies={
-                  i === 0
-                    ? ["NodeJS", "Angular", "NestJS", "Tailwind CSS"]
-                    : ["React", "NodeJS", "MongoDB", "Tailwind CSS", "StyledComponents"]
-                }
+                technologies={["React", "NodeJS", "NestJS", "PostgreeSql", "MongoDB", "Tailwind CSS", "StyledComponents"]}
                 experienceTitle={tr.experience.title}
               />
             ))}
